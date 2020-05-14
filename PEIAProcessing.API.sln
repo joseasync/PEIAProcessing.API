@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{4A6B195B-8460-4168-A99D-BF94C7B6EB69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{0B83B6D8-61A9-4105-9A6A-75F0AC423BB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Service", "3 - Service", "{13DC540F-153E-41AE-B29C-5629C94F28BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{B6614D6C-F399-4D64-A44A-FD0E0FBCADF2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PEIAProcessing.Domain", "PEIAProcessing.Domain\PEIAProcessing.Domain.csproj", "{24C99FB5-D252-445E-9078-0824E5956E52}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PEIAProcessing.Service", "PEIAProcessing.Service\PEIAProcessing.Service.csproj", "{D9775518-7A45-43CB-AA20-7E69978CE60F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PEIAProcessing.Data", "PEIAProcessing.Data\PEIAProcessing.Data.csproj", "{973B1706-A62F-4D09-A8DD-A906040C0F33}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PEIAProcessing.Api", "PEIAProcessing.Api\PEIAProcessing.Api.csproj", "{ADB8105A-AAE6-4325-8417-7C913906D050}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24C99FB5-D252-445E-9078-0824E5956E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C99FB5-D252-445E-9078-0824E5956E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C99FB5-D252-445E-9078-0824E5956E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C99FB5-D252-445E-9078-0824E5956E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9775518-7A45-43CB-AA20-7E69978CE60F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9775518-7A45-43CB-AA20-7E69978CE60F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9775518-7A45-43CB-AA20-7E69978CE60F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9775518-7A45-43CB-AA20-7E69978CE60F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973B1706-A62F-4D09-A8DD-A906040C0F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973B1706-A62F-4D09-A8DD-A906040C0F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973B1706-A62F-4D09-A8DD-A906040C0F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973B1706-A62F-4D09-A8DD-A906040C0F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB8105A-AAE6-4325-8417-7C913906D050}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB8105A-AAE6-4325-8417-7C913906D050}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB8105A-AAE6-4325-8417-7C913906D050}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB8105A-AAE6-4325-8417-7C913906D050}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{24C99FB5-D252-445E-9078-0824E5956E52} = {0B83B6D8-61A9-4105-9A6A-75F0AC423BB2}
+		{D9775518-7A45-43CB-AA20-7E69978CE60F} = {13DC540F-153E-41AE-B29C-5629C94F28BB}
+		{973B1706-A62F-4D09-A8DD-A906040C0F33} = {B6614D6C-F399-4D64-A44A-FD0E0FBCADF2}
+		{ADB8105A-AAE6-4325-8417-7C913906D050} = {4A6B195B-8460-4168-A99D-BF94C7B6EB69}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F610BB46-4226-4D04-B389-952E2622B62C}
+	EndGlobalSection
+EndGlobal
