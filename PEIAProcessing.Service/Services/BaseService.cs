@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using FluentValidation;
-using PEIAProcessing.Data;
 using PEIAProcessing.Domain.Entities;
 using PEIAProcessing.Domain.Interfaces;
 
@@ -14,14 +12,7 @@ namespace PEIAProcessing.Service.Services
 
         public BaseService()
         {
-            var RepositoryLocal = typeof(BaseConnection).Assembly.ExportedTypes.Where(x =>
-                typeof(IRepository<>).IsAssignableFrom(x.BaseType))
-                .ToList();
-                //.Select(Activator.CreateInstance).Cast<IRepository<T>>().FirstOrDefault();
-
-
-
-            var xpto = RepositoryLocal;
+            //Set repository by reflection or other approach based on T
 
         }
 
