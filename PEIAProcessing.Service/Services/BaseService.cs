@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Loader;
 using FluentValidation;
+using PEIAProcessing.Data;
 using PEIAProcessing.Domain.Entities;
 using PEIAProcessing.Domain.Interfaces;
 
@@ -8,11 +11,14 @@ namespace PEIAProcessing.Service.Services
 {
     public class BaseService<T> : IServiceDomain<T> where T : BaseEntity
     {
-        private readonly IRepository<T> repository;
+        private readonly IRepository<T> _repository;
 
-        public BaseService()
+        public BaseService(ConnectionConfig connectionConfig)
         {
-            //Set repository by reflection or other approach based on T
+            var repositoryLocal = typeof(BaseConnection).Assembly.ExportedTypes.FirstOrDefault(x =>
+                    typeof(IRepository<T>).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract);
+
+            _repository = (IRepository<T>) Activator.CreateInstance(repositoryLocal, connectionConfig);
 
         }
 
@@ -20,7 +26,7 @@ namespace PEIAProcessing.Service.Services
         {
             Validate(obj, Activator.CreateInstance<V>());
 
-            repository.Insert(obj);
+            _repository.Insert(obj);
             return obj;
         }
 
@@ -28,7 +34,7 @@ namespace PEIAProcessing.Service.Services
         {
             Validate(obj, Activator.CreateInstance<V>());
 
-            repository.Update(obj);
+            _repository.Update(obj);
             return obj;
         }
 
@@ -37,17 +43,17 @@ namespace PEIAProcessing.Service.Services
             if (id == 0)
                 throw new ArgumentException("The id can't be zero.");
 
-            repository.Delete(id);
+            _repository.Delete(id);
         }
 
-        public IList<T> Get() => repository.Select();
+        public IList<T> Get() => _repository.Select();
 
         public T Get(int id)
         {
             if (id == 0)
                 throw new ArgumentException("The id can't be zero.");
 
-            return repository.Select(id);
+            return _repository.Select(id);
         }
 
         private void Validate(T obj, AbstractValidator<T> validator)

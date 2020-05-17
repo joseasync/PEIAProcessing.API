@@ -4,22 +4,22 @@ using PEIAProcessing.Domain.Interfaces;
 
 namespace PEIAProcessing.Data.Repositories
 {
-    public class PositionRepository<T> : BaseConnection, IRepository<T> where T : Position
+    public class PositionRepository : BaseConnection, IRepository<Position>
     {
         public PositionRepository(ConnectionConfig connectionConfig) : base(connectionConfig){}
 
-        public IList<T> Select()
+        public IList<Position> Select()
         {
             //return context.Set<T>().ToList();
             return null;
         }
 
-        public void Insert(T obj)
+        public void Insert(Position obj)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Update(T obj)
+        public void Update(Position obj)
         {
             throw new System.NotImplementedException();
         }
@@ -29,7 +29,7 @@ namespace PEIAProcessing.Data.Repositories
             throw new System.NotImplementedException();
         }
 
-        public T Select(int id)
+        public Position Select(int id)
         {
             //return context.Set<T>().Find(id);            //return context.Set<T>().Find(id);
             return null;
